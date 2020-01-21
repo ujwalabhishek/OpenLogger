@@ -21,6 +21,8 @@ clone the git repository https://github.com/ujwalabhishek/OpenLogger.git on your
 * open terminal on your desktop 
 * change your terminal to point to the desired directory ```cd /var/www```
 * clone the repository ```git clone https://github.com/ujwalabhishek/OpenLogger.git;```
+* cd to the cloned directory ```cd OpenLogger
+git checkout master```
 * now to run the application start the php inbuilt web server ```php -S localhost:8080 -t \public```
 
 
