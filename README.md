@@ -116,7 +116,44 @@ All endpoints are listed below, with required feilds and methods:
 Endpoint  | Method | Description | Feilds
 ------|------------|---------|-------------
 http://localhost:8080/api/v1/logfile/ | GET | lists all log files in the log directory |
-http://localhost:8080/api/v1/logfile/ | PUT | writes log entries to the log file |
-http://localhost:8080/api/v1/logfile/ | POST | writes log entries to the log file | errortype, message, context (array  )
+http://localhost:8080/api/v1/logfile/ | PUT | writes log entries to the log file | errortype, message, context (array)
+http://localhost:8080/api/v1/logfile/ | POST | writes log entries to the log file | errortype, message, context (array)
 http://localhost:8080/api/v1/logfile/search | POST | search for log file based on Year, Month & Date. | year, month, day
 http://localhost:8080/api/v1/logfile/read | POST | read log file contents based on file name. | filename
+
+
+## Sample outputs
+
+    http://localhost:8080/api/v1/logfile/
+
+    ```
+    {
+        "data": [
+            {
+                "fileName": "log_2020-01-15.txt",
+                "fileExtention": "txt",
+                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-15.txt"
+            },
+            {
+                "fileName": "syslog_2020-01-21.log",
+                "fileExtention": "log",
+                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/syslog_2020-01-21.log"
+            },
+            {
+                "fileName": "log_2020-01-21.tlog",
+                "fileExtention": "tlog",
+                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.tlog"
+            },
+            {
+                "fileName": "log_2020-01-21.log",
+                "fileExtention": "log",
+                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.log"
+            },
+            {
+                "fileName": "log_2020-01-21.txt",
+                "fileExtention": "txt",
+                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.txt"
+            }
+        ]
+    }
+    ```
