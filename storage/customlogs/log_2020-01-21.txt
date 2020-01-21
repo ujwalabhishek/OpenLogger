@@ -1,0 +1,26 @@
+[2020-01-21 9:01:47.754954] [debug] test me
+    name: 'Ujwal1'
+    age: 31
+    city: 'New York'
+[2020-01-21 9:02:44.981903]
+    name: 'Ujwal1'
+    age: 31
+    city: 'New York'
+[2020-01-21 9:03:43.862348][$var]
+    name: 'Ujwal1'
+    age: 31
+    city: 'New York'
+[2020-01-21 9:04:18.980047][$var]StaticTexttest me
+    name: 'Ujwal1'
+    age: 31
+    city: 'New York'
+[2020-01-21 9:08:55.921760]+[$var]+StaticText+test me
+    name: 'Ujwal1'
+    age: 31
+    city: 'New York'
+[2020-01-21 9:09:31.890407]+[$var]+StaticText+test me
+json_encode(['datetime'=>'2020-01-21 9:12:05.903232','logLevel'=>'DEBUG','message'=>'test me','context'=>'{"name":"Ujwal1","age":31,"city":"New York"}',]);
+json_encode(['datetime'=>'2020-01-21 9:13:41.642290','logLevel'=>'DEBUG','message'=>'test me','context'=>'{"name":"Ujwal1","age":31,"city":"New York"}',]);
+['datetime'=>'2020-01-21 9:14:03.975528','logLevel'=>'DEBUG','message'=>'test me','context'=>'{"name":"Ujwal1","age":31,"city":"New York"}',]
+['datetime'=>'2020-01-21 9:15:02.592108','logLevel'=>'DEBUG','message'=>'test me','context'=>'{"name":"Ujwal1","age":31,"city":"New York"}',]
+['datetime'=>'2020-01-21 9:15:53.765278','logLevel'=>'DEBUG','message'=>'test me','context'=>'{"name":"Ujwal1","age":31,"city":"New York"}',]
