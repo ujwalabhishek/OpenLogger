@@ -123,9 +123,9 @@ http://localhost:8080/api/v1/logfile/read | POST | read log file contents based 
 
 
 ## Sample outputs
-http://localhost:8080/api/v1/logfile/
+http://localhost:8080/api/v1/logfile/ (GET)
 
-```javascript
+```
 {
     "data": [
         {
@@ -154,13 +154,15 @@ http://localhost:8080/api/v1/logfile/
             "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.txt"
         }
     ]
-}```
+}
+```
 
 
 http://localhost:8080/api/v1/logfile/
 
-```javascript
+```
 {
     "data": "Log entry created successfully",
     "code": 200
-}```
+}
+```
