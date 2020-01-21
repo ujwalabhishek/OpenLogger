@@ -126,39 +126,39 @@ http://localhost:8080/api/v1/logfile/read | POST | read log file contents based 
 http://localhost:8080/api/v1/logfile/
 
 ```javascript
-    {
-        "data": [
-            {
-                "fileName": "log_2020-01-15.txt",
-                "fileExtention": "txt",
-                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-15.txt"
-            },
-            {
-                "fileName": "syslog_2020-01-21.log",
-                "fileExtention": "log",
-                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/syslog_2020-01-21.log"
-            },
-            {
-                "fileName": "log_2020-01-21.tlog",
-                "fileExtention": "tlog",
-                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.tlog"
-            },
-            {
-                "fileName": "log_2020-01-21.log",
-                "fileExtention": "log",
-                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.log"
-            },
-            {
-                "fileName": "log_2020-01-21.txt",
-                "fileExtention": "txt",
-                "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.txt"
-            }
-        ]
-    }```
+{
+    "data": [
+        {
+            "fileName": "log_2020-01-15.txt",
+            "fileExtention": "txt",
+            "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-15.txt"
+        },
+        {
+            "fileName": "syslog_2020-01-21.log",
+            "fileExtention": "log",
+            "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/syslog_2020-01-21.log"
+        },
+        {
+            "fileName": "log_2020-01-21.tlog",
+            "fileExtention": "tlog",
+            "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.tlog"
+        },
+        {
+            "fileName": "log_2020-01-21.log",
+            "fileExtention": "log",
+            "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.log"
+        },
+        {
+            "fileName": "log_2020-01-21.txt",
+            "fileExtention": "txt",
+            "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.txt"
+        }
+    ]
+}```
 
 http://localhost:8080/api/v1/logfile/
 ```javascript
-    {
-        "data": "Log entry created successfully",
-        "code": 200
-    }```
+{
+    "data": "Log entry created successfully",
+    "code": 200
+}```
