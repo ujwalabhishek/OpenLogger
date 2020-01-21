@@ -15,6 +15,7 @@ $router->get('/logfile', 'OpenloggerController@view');
 $router->put('/logfile', 'OpenloggerController@write');
 $router->post('/logfile', 'OpenloggerController@write');
 
-$router->post('/log/search', 'OpenloggerController@search');
-$router->post('/log/read', 'OpenloggerController@read');
+$router->post('/logfile/search', 'OpenloggerController@search');
+$router->post('/logfile/read', 'OpenloggerController@read');
+$router->get('/', 'OpenloggerController@index');
 });

@@ -80,7 +80,7 @@ class OpenloggerController extends Controller
      * @return type
      * @throws RuntimeException
      */
-    public function viewlogdir(Request $request)
+    public function view(Request $request)
     {
         try {
 
