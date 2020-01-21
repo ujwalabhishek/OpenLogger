@@ -40,6 +40,7 @@ class OpenloggerController extends Controller
         $this->loggerOptions['logFormat'] = (null !== env('LOGFORMAT')) ? env('LOGFORMAT') : 'false';
         $this->loggerOptions['appendContext'] = (null !== env('APPENDCONTEXT')) ? env('APPENDCONTEXT') : 'true';
     }
+
     /**
      * 
      */
@@ -72,6 +73,7 @@ class OpenloggerController extends Controller
 
         return $logger->$errorType($message, $context) ? $this->successResponse("Log entry created successfully") : $this->errorResponse("Error creating log entry", Response::HTTP_BAD_REQUEST);
     }
+
     /**
      * 
      * @param Request $request
@@ -111,9 +113,8 @@ class OpenloggerController extends Controller
             'month' => 'digits:2|min:1|max:12',
             'day' => 'digits:2|min:1|max:31'
         ];
+
         $this->validate($request, $rules);
-
-
 
         $searchByYear = (!null == $request->input('year')) ? $request->input('year') . '-' : '';
         $searchByMonth = (!null == $request->input('month')) ? $request->input('month') . '-' : '';
