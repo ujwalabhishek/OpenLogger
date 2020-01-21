@@ -123,9 +123,9 @@ http://localhost:8080/api/v1/logfile/read | POST | read log file contents based 
 
 
 ## Sample outputs
-http://localhost:8080/api/v1/logfile/
+http://localhost:8080/api/v1/logfile/ (GET)
 
-```javascript
+```
 {
     "data": [
         {
@@ -154,13 +154,58 @@ http://localhost:8080/api/v1/logfile/
             "filePath": "/Users/ujwalabhishek/Sites/OpenLogger/storage/customlogs/log_2020-01-21.txt"
         }
     ]
-}```
+}
+```
 
 
-http://localhost:8080/api/v1/logfile/
+    http://localhost:8080/api/v1/logfile/ (PUT)
 
-```javascript
+```
 {
     "data": "Log entry created successfully",
     "code": 200
-}```
+}
+```
+
+    http://localhost:8080/api/v1/logfile/read/
+
+```
+{
+    "data": [
+        "[2020-01-15 20:19:05.804280] [debug] This is a debugging entry\n",
+        "    id: '404'\n",
+        "    lineno: '24'\n",
+        "    host: 'server1'\n",
+        "[2020-01-15 20:19:21.343863] [debug] This is a debugging entry\n",
+        "    id: '404'\n",
+        "    lineno: '24'\n",
+        "    host: 'server1'\n",
+        "[2020-01-15 20:19:56.294020] [debug] This is a debugging entry\n",
+        "    id: '404'\n",
+        "    lineno: '24'\n",
+        "    host: 'server1'\n",
+        "[2020-01-15 20:21:09.885132] [debug] This is a debugging entry\n",
+        "    id: '404'\n",
+        "    lineno: '24'\n",
+        "    host: 'server1'\n",
+        "[2020-01-15 20:22:28.187637] [debug] This is a debugging entry\n",
+        "    id: '404'\n",
+        "    lineno: '24'\n",
+        "    host: 'server1'\n",
+        "[2020-01-15 20:22:46.374641] [debug] test me\n",
+        "[2020-01-15 20:25:40.893879] [debug] test me\n",
+        "[2020-01-15 20:30:54.385241] [debug] test me\n",
+        "[2020-01-15 20:34:02.834939] [debug] test me\n",
+        "[2020-01-15 20:46:54.457500] [debug] test me\n",
+        "[2020-01-15 20:49:14.859134] [debug] test me\n",
+        "    name: 'John'\n",
+        "    age: 31\n",
+        "    city: 'New York'\n",
+        "[2020-01-15 21:19:21.398538] [debug] test me\n",
+        "    name: 'John'\n",
+        "    age: 31\n",
+        "    city: 'New York'\n"
+    ],
+    "code": 200
+}
+```
