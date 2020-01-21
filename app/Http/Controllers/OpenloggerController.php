@@ -30,7 +30,7 @@ class OpenloggerController extends Controller
     public function __construct()
     {
         $this->logdirectory = (null !== env('LOGDIRECTORY')) ? env('LOGDIRECTORY') : 'customlogs';
-        $this->logLevelThreshold = (null !== env('LOGLEVEL')) ? env('LOGLEVEL') : 'DEBUG';
+        $this->logLevelThreshold = (null !== env('LOGLEVEL')) ? env('LOGLEVEL') : 'debug';
 
         $this->loggerOptions['extension'] = (null !== env('FILEEXTENTION')) ? env('FILEEXTENTION') : 'log';
         $this->loggerOptions['dateFormat'] = (null !== env('DATEFORMAT')) ? $this->loggerOptions['dateFormat'] = env('DATEFORMAT') : 'Y-m-d G:i:s';

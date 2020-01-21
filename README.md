@@ -123,10 +123,9 @@ http://localhost:8080/api/v1/logfile/read | POST | read log file contents based 
 
 
 ## Sample outputs
+http://localhost:8080/api/v1/logfile/
 
-    http://localhost:8080/api/v1/logfile/
-
-    ```
+    ``` 
     {
         "data": [
             {
