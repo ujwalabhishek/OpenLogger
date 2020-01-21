@@ -18,9 +18,9 @@ Composer
 ## Basic Usage
 clone the git repository https://github.com/ujwalabhishek/OpenLogger.git on your local machine running php7.0 and above
 
-*. open terminal on your desktop 
-*. change your terminal to point to the desired directory ```cd /var/www```
-*. clone the repository ```git clone https://github.com/ujwalabhishek/OpenLogger.git;```
-*. now to run the application start the php inbuilt web server ```php -S localhost:8080 -t \public```
+* open terminal on your desktop 
+* change your terminal to point to the desired directory ```cd /var/www```
+* clone the repository ```git clone https://github.com/ujwalabhishek/OpenLogger.git;```
+* now to run the application start the php inbuilt web server ```php -S localhost:8080 -t \public```
 
 
