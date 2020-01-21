@@ -156,7 +156,9 @@ http://localhost:8080/api/v1/logfile/
     ]
 }```
 
+
 http://localhost:8080/api/v1/logfile/
+
 ```javascript
 {
     "data": "Log entry created successfully",
