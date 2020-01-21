@@ -2,3 +2,5 @@
 /.idea
 Homestead.json
 Homestead.yaml
+/storage/logs
+.env
