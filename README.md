@@ -113,10 +113,10 @@ logfile are just items. They're operated upon by methods , which are get, put, p
 
 All endpoints are listed below, with required feilds and methods:
 
-Endpoint  | Description | Feilds
-------|------------|---------
-http://localhost:8080/api/v1/logfile/ | GET | lists all log files in the log directory
-http://localhost:8080/api/v1/logfile/ | PUT | writes log entries to the log file
-http://localhost:8080/api/v1/logfile/ | POST | writes log entries to the log file
-http://localhost:8080/api/v1/logfile/search | POST | search for log file based on Year, Month & Date.
-http://localhost:8080/api/v1/logfile/read | POST | read log file contents based on file name.
+Endpoint  | Method | Description | Feilds
+------|------------|---------|-------------
+http://localhost:8080/api/v1/logfile/ | GET | lists all log files in the log directory |
+http://localhost:8080/api/v1/logfile/ | PUT | writes log entries to the log file |
+http://localhost:8080/api/v1/logfile/ | POST | writes log entries to the log file | errortype, message, context (array  )
+http://localhost:8080/api/v1/logfile/search | POST | search for log file based on Year, Month & Date. | year, month, day
+http://localhost:8080/api/v1/logfile/read | POST | read log file contents based on file name. | filename
