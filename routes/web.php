@@ -10,8 +10,11 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-$router->get('/openlogger', 'OpenloggerController@index');
-$router->post('/openlogger/write', 'OpenloggerController@write');
-$router->get('/openlogger/view', 'OpenloggerController@viewlogdir');
-$router->post('/openlogger/search', 'OpenloggerController@search');
-$router->post('/openlogger/read', 'OpenloggerController@read');
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
+$router->get('/logfile', 'OpenloggerController@view');
+$router->put('/logfile', 'OpenloggerController@write');
+$router->post('/logfile', 'OpenloggerController@write');
+
+$router->post('/log/search', 'OpenloggerController@search');
+$router->post('/log/read', 'OpenloggerController@read');
+});
