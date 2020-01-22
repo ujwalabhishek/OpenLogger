@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logger;
+namespace App;
 
 use DateTime;
 use Exception;
@@ -201,6 +201,7 @@ class Logger extends AbstractLogger
      */
     public function log($level, $message, array $context = array())
     {
+       
         if ($this->logLevels[$this->logLevelThreshold] < $this->logLevels[$level]) {
             return;
         }
@@ -228,7 +229,7 @@ class Logger extends AbstractLogger
                 if ($this->options['flushFrequency'] && $this->logLineCount % $this->options['flushFrequency'] === 0) {
                     fflush($this->fileHandle);
                 }
-                return true;
+                return basename($this->logFilePath);
             }
         }
         return false;

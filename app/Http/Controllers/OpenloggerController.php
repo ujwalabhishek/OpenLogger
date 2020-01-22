@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-require '../app/Logger.php';
-
-use App\Logger\Logger;
+use App\Logger;
 use App\Traits\ApiResponser;
 use DirectoryIterator;
 use Illuminate\Http\Request;
@@ -34,11 +32,11 @@ class OpenloggerController extends Controller
 
         $this->loggerOptions['extension'] = (null !== env('FILEEXTENTION')) ? env('FILEEXTENTION') : 'log';
         $this->loggerOptions['dateFormat'] = (null !== env('DATEFORMAT')) ? $this->loggerOptions['dateFormat'] = env('DATEFORMAT') : 'Y-m-d G:i:s';
-        $this->loggerOptions['filename'] = (null !== env('FILENAME')) ? env('FILENAME') : 'false';
+        $this->loggerOptions['filename'] = (null !== env('FILENAME')) ? env('FILENAME') : false;
         $this->loggerOptions['flushFrequency'] = (null !== env('FLUSHFREQUENCY')) ? env('FLUSHFREQUENCY') : '1000';
         $this->loggerOptions['prefix'] = (null !== env('PREFIX')) ? env('PREFIX') : 'log_';
-        $this->loggerOptions['logFormat'] = (null !== env('LOGFORMAT')) ? env('LOGFORMAT') : 'false';
-        $this->loggerOptions['appendContext'] = (null !== env('APPENDCONTEXT')) ? env('APPENDCONTEXT') : 'true';
+        $this->loggerOptions['logFormat'] = (null !== env('LOGFORMAT')) ? env('LOGFORMAT') : false;
+        $this->loggerOptions['appendContext'] = (null !== env('APPENDCONTEXT')) ? env('APPENDCONTEXT') : true;
     }
 
     /**
@@ -60,18 +58,23 @@ class OpenloggerController extends Controller
             'errortype' => 'required|string|in:emergency,alert,critical,error,warning,notice,info,debug',
             'message' => 'required|string|max:255',
             'context' => 'max:255|json',
+            'loggeroption' => 'json',
         ];
         $this->validate($request, $rules);
 
         $errorType = $request->input('errortype');
         $message = $request->input('message');
         $context = empty($request->input('context')) ? array() : json_decode($request->input('context'), true);
-
-
-
+        $loggerOptions = json_decode($request->input('loggeroption'),true);
+        if(!empty($loggerOptions)){
+            $this->loggerOptions = array_merge($this->loggerOptions, $loggerOptions);
+        }
+        
         $logger = new Logger(storage_path() . "/{$this->logdirectory}", $this->logLevelThreshold, $this->loggerOptions);
 
-        return $logger->$errorType($message, $context) ? $this->successResponse("Log entry created successfully") : $this->errorResponse("Error creating log entry", Response::HTTP_BAD_REQUEST);
+        $status = $logger->$errorType($message, $context);
+    
+        return $status ?  $this->successResponse(array("success"=>"Log entry created successfully","context" =>$status)) :  $this->errorResponse("Error creating log entry", Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -164,8 +167,10 @@ class OpenloggerController extends Controller
                 throw new RuntimeException('File open failed.');
             }
             $fileData = array();
-            foreach (file($path) as $line) {
-                $fileData[] = $line;
+
+            $file_lines = file($path);
+            foreach ($file_lines as $line) {
+                 $fileData[] = $line;
             }
 
             return empty($fileData) ? $this->errorResponse("Nothing to read. The file {$request->input('filename')} is empty.", Response::HTTP_UNPROCESSABLE_ENTITY) : $this->successResponse($fileData);
